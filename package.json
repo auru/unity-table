@@ -1,6 +1,6 @@
 {
   "name": "unity-table",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Table component for React",
   "main": "dist/index.js",
   "scripts": {
