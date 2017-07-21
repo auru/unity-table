@@ -1,0 +1,51 @@
+{
+  "name": "unity-table",
+  "version": "0.0.0",
+  "description": "Table component for React",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./scripts/dev",
+    "build": "webpack"
+  },
+  "author": "frux <qdinov@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-info": "^3.1.9",
+    "@storybook/addon-knobs": "^3.1.6",
+    "@storybook/addon-options": "^3.1.6",
+    "@storybook/react": "^3.1.6",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chalk": "^2.0.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-loader": "^2.0.6",
+    "postcss-nested": "^2.0.4",
+    "raw-loader": "^0.5.1",
+    "react-dom": "^15.6.1",
+    "storybook-readme": "^3.0.5",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.3.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auru/unity-table.git"
+  },
+  "bugs": {
+    "url": "https://github.com/auru/unity-table/issues"
+  },
+  "homepage": "https://github.com/auru/unity-table#readme"
+}

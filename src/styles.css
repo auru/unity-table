@@ -1,0 +1,105 @@
+:root
+{
+	--symb-sort-asc: '▲';
+	--symb-sort-desc: '▼';
+	--symb-sort-no: ' ';
+	--color-main: #dedede;
+	--color-th-text: #a2a2a2;
+	--color-th-sort: #5791de;
+}
+
+.unity-table
+{
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	overflow: visible;
+
+	&__head
+	{
+		position: sticky;
+		top: 0;
+	}
+
+	&__colhead, &__cell
+	{
+		padding: 10px 15px;
+		border-bottom: 1px solid var(--color-main);
+		background: white;
+	}
+
+	&__colhead
+	{
+		text-align: left;
+		font-weight: normal;
+		color: var(--color-th-text);
+		user-select: none;
+
+		&_sortable
+		{
+			& span
+			{
+				border-bottom: 1px dotted var(--color-th-text);
+
+				&:hover
+				{
+					cursor: pointer;
+					color: color(var(--color-th-text) lightness(70%));
+				}
+
+				&::after
+				{
+					content: var(--symb-sort-no);
+					display: inline;
+					margin-left: 5px;
+					font-size: .6em;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		&_sort
+		{
+			&_asc span,
+			&_desc span
+			{
+				color: var(--color-th-sort);
+				border-bottom: none;
+
+				&:hover{
+					color: color(var(--color-th-sort) lightness(70%))
+				}
+			}
+
+			&_asc span::after
+			{
+				content: var(--symb-sort-asc);
+			}
+
+			&_desc span::after
+			{
+				content: var(--symb-sort-desc);
+			}
+		}
+	}
+
+	&__cell
+	{
+		color: #333;
+	}
+
+	&__row
+	{
+		&:hover .table__cell
+		{
+			background: color(var(--color-main) lightness(97%));
+		}
+
+		&:last-child .table__cell
+		{
+			border-bottom: none;
+		}
+	}
+}
