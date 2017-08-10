@@ -9,6 +9,9 @@
     "build": "webpack"
   },
   "author": "frux <qdinov@gmail.com>",
+  "contributors": [
+    "Anton Konev <info@antonkonev.com> (https://antonkonev.com/)"
+  ],
   "license": "ISC",
   "dependencies": {
     "prop-types": "^15.5.10",

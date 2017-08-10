@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {SimpleTable} from '../../dist';
 import {films as tableHead} from '../helpers/tableHead';
 import {films as mapData} from '../helpers/mapData';
@@ -13,7 +13,7 @@ const columns = [
 	{name: 'producer', width: '230px'}
 ];
 
-export default class Example extends PureComponent {
+export default class Example extends Component {
 	constructor(props) {
 		super(props);
 
