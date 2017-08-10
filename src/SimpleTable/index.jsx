@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {CLASSES} from '../constants';
 import {Table, Thead, Tbody, Th, Tr, Td} from '../index';
@@ -10,7 +10,7 @@ const thClassName = (columnName, sort) => {
 	return `${CLASSES.th}_sortable ${isSorting ? ` ${CLASSES.th}_sort_${sortDir}` : ''}`;
 };
 
-export default class SimpleTable extends PureComponent {
+export default class SimpleTable extends Component {
 	getHandleSortClick(field) {
 		return () => {
 			const {sort, onSortChange} = this.props;
