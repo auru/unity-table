@@ -95,7 +95,7 @@ const mapData = ({title, episode_id, director, producer}) => ({
   producer
 });
 
-const mapAttr = data => ({
+const mapAttrs = data => ({
   title: {colSpan: 4}
 });
 
@@ -104,7 +104,7 @@ const Example = () => (
     columns={columns}
     tableHead={tableHead}
     mapData={mapData}
-    mapAttr={mapAttr}
+    mapAttrs={mapAttrs}
     data={data}
     />
 );
