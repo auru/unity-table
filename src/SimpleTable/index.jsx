@@ -55,11 +55,19 @@ export default class SimpleTable extends Component {
 						const rowData = mapData ? mapData(item) : item;
 						const key = keyName ? item[keyName] : i;
 						return (
-							<Tr key={key}>
-								{columns.map(({name}) => (
-									<Td key={`${key}:${name}`}>{rowData[name]}</Td>
-								))}
-							</Tr>
+							(rowData instanceof Array) ?
+								rowData.map(row => (
+									<Tr key={key}>
+										{columns.map(({name}) => (
+											<Td key={`${key}:${name}`}>{row[name]}</Td>
+										))}
+									</Tr>
+								)) :
+								<Tr key={key}>
+									{columns.map(({name}) => (
+										<Td key={`${key}:${name}`}>{rowData[name]}</Td>
+									))}
+								</Tr>
 						);
 					})}
 				</Tbody>
