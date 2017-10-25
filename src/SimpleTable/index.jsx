@@ -26,7 +26,7 @@ export default class SimpleTable extends Component {
 	}
 
 	render () {
-		const {columns, tableHead, mapData, keyName, sort, data} = this.props;
+		const {columns, tableHead, mapData, mapAttr, keyName, sort, data} = this.props;
 		const sortField = sort && sort.field;
 		const sortDir = sort && sort.asc ? 'asc' : 'desc';
 		const head = tableHead();
@@ -53,12 +53,18 @@ export default class SimpleTable extends Component {
 				<Tbody>
 					{data && data.map((item, i) => {
 						const rowData = mapData ? mapData(item) : item;
+						const rowAttrs = mapAttr ? mapAttr(item) : {};
 						const key = keyName ? item[keyName] : i;
+
 						return (
 							<Tr key={key}>
-								{columns.map(({name}) => (
-									<Td key={`${key}:${name}`}>{rowData[name]}</Td>
-								))}
+								{
+									columns.map(({name}) => 
+										rowData.hasOwnProperty(name) ?
+											<Td key={`${key}:${name}`} {...rowAttrs[name]}>{rowData[name]}</Td> :
+											null
+									)
+								}
 							</Tr>
 						);
 					})}
@@ -79,6 +85,7 @@ SimpleTable.propTypes = {
 	).isRequired,
 	tableHead: PropTypes.func.isRequired, // – Function that returns headings for each column {columnName: columnTitle}
 	mapData: PropTypes.func,              // – Mapping function for data (Object) => Object  (default: e => e)
+	mapAttr: PropTypes.func,              // - Mapping function for cell attributes (Object) => Object (default: e => {})
 	keyName: PropTypes.string,            // – Name of the field which value
 	                                      //   can be used for the key property (e.g. "id") (default: itteration index)
 	onSortChange: PropTypes.func,         // – Sorting changed event handler. Accepts new sorting object.

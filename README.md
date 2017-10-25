@@ -7,6 +7,7 @@
   * [Displaying raw data](#displaying-raw-data)
   * [Decorating data](#decorating-data)
   * [Specifying column widths](#specifying-column-widths)
+  * [Specifying column attributes](#specifying-column-attributes)
   * [Sort data](#sort-data)
 * [Plain usage (layout only)](#plain-usage-layout-only)
 
@@ -79,6 +80,34 @@ const columns = [
   {name: 'director', width: '90px'},
   {name: 'producer', width: '230px'}
 ];
+```
+
+### Specifying column attributes
+
+```jsx
+const columns = ...;
+const tableHead = ...;
+
+const mapData = ({title, episode_id, director, producer}) => ({
+  title,
+  episode_id,
+  director,
+  producer
+});
+
+const mapAttr = data => ({
+  title: {colSpan: 4}
+});
+
+const Example = () => (
+  <SimpleTable
+    columns={columns}
+    tableHead={tableHead}
+    mapData={mapData}
+    mapAttr={mapAttr}
+    data={data}
+    />
+);
 ```
 
 ### Sort data
