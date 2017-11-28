@@ -34,7 +34,7 @@
     "postcss-loader": "^2.0.6",
     "postcss-nested": "^2.0.4",
     "raw-loader": "^0.5.1",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.2.0",
     "storybook-readme": "^3.0.5",
     "style-loader": "^0.18.2",
     "webpack": "^3.3.0",
