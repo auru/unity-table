@@ -37,7 +37,7 @@
     "react-dom": "^15.6.1",
     "storybook-readme": "^3.0.5",
     "style-loader": "^0.19.0",
-    "webpack": "^3.3.0",
+    "webpack": "^4.34.0",
     "webpack-node-externals": "^1.6.0"
   },
   "directories": {
